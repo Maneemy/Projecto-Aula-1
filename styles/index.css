@@ -97,10 +97,7 @@ footer{
     display: flex;
     flex-direction: column;
     color: #ffffff80;
-    position: absolute;
-    bottom:20px;
-    left: 0;
-    right: 0;
+    margin-top: 32px;
     /* permite colocar o textode rodape de forma flexivel, na forma de columa e com posicao absoluta. Conta com o comando que permite definir as distancias do texto em relacao aos cantos da pagina */
 }
 
