@@ -60,13 +60,6 @@ html, body{
     /* permite personalizar a imagem do botao, definindo a sua largura e espacamento em relacao ao eixo do X da pagina */
 }
 
-.buttonAreaContainer button p0{
-    color: white;
-    font-size: 25px;
-    font-weight: normal;
-    text-align: left;
-}
-
 .buttonAreaContainer button p{
     color: white;
     margin: 18px;
@@ -74,6 +67,16 @@ html, body{
     font-weight: bold;
     /* personaliza o texto de cada botao em particular (neste caso ambos botoes teem mesma referencia pelo que as alteracoes serao validas para todos) alterando paramteros como cor, altura e peso da fonte */
 }
+
+.p1{
+    color: white;
+    /* margin:auto; */
+    text-align: center;
+    font-size: 25px;
+    font-weight: normal;
+    /* personaliza o texto de cada botao em particular (neste caso ambos botoes teem mesma referencia pelo que as alteracoes serao validas para todos) alterando paramteros como cor, altura e peso da fonte */
+}
+
 
 .buttonAreaContainer button{
     padding: 15px;
