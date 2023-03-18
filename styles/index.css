@@ -1,18 +1,103 @@
-{
-    padding:0;
-    margin:0;
-}
+/* configuracao global da pagina */
+ *{
+    margin: 0;
+    padding: 0;
+    /* define as margens e o espacamento interno entre os elementos e as bordas */
+ }
 
-body {
-    height:100vh;
+ /* para fazer a configuracao das tags html e body */
+html, body{
     width: 100vw;
-    display: block;
+    /* diz a pagina que as duas tags devem ter a largura de 100% da largura de visualizacao */
+    height: 100%;
+    color: white;
+    /* define o tipo e cor das letras da pagina. Eh importante que esteja antes do tipo de fonte caso nao a pagina nao vai implementar o comando */
+    font-family: Arial, Helvetica, sans-serif;       
 }
 
-.bd {
-    display: flexbox
-max-width: 720px;
-height: 100%;
-color:white;
-background-color: #18252b;
+.pageBody{
+    height: 100%;
+    /* altura - ocupa 100 por cento da pagina */
+    max-width: 720px;
+    /* largura maxima de 720px */
+    margin: auto;
+    /* ajusta automaticamente as margens da pagina */
+    background-color: #18252B ;
+    /* cor de fundo da pagina - # para usar codigo hexadecimal */
 }
+
+.titleContainer{
+    display: flex;
+    margin: 0 18px;
+    align-items: center;
+    flex-direction: column; 
+    /* define que a classe titleContainer criada em section deve ser de visualizacao flexivel, com distancia de 0 e 18px em relacao ao eixo do X e Y. A informacao deve ser centralizada e na forma de coluna*/
+}
+
+.titleContainer h2{
+    color: #e0bd6a
+    /* Personaliza o estilo do titulo h2 */
+}
+
+.titleContainer p{
+    margin: 12px 0;
+    text-align: center;
+    /* Personaliza as margens e alinhamento do texto do paragrafo */
+}
+
+.buttonAreaContainer{
+    gap: 20px; 
+    display:flex;
+    flex-wrap: wrap;
+    /* background-color: blue; */
+    justify-content: space-around;
+       /* Permite que a faixa de localizacao dos botoes seja de visualizacao flexivel, estando os botoes alinhados um ao lado do outro. Flex wrap permite que na falta de espaco a imagem do botao quebre o alinhamento e passe para a linha abaixo (por defaulto vem NO WRAP) */
+}
+
+.buttonAreaContainer button img{
+    width: 120px;
+    margin: 20px;
+    /* permite personalizar a imagem do botao, definindo a sua largura e espacamento em relacao ao eixo do X da pagina */
+}
+
+.buttonAreaContainer button p0{
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.buttonAreaContainer button p{
+    color: white;
+    margin: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    /* personaliza o texto de cada botao em particular (neste caso ambos botoes teem mesma referencia pelo que as alteracoes serao validas para todos) alterando paramteros como cor, altura e peso da fonte */
+}
+
+.buttonAreaContainer button{
+    padding: 15px;
+    border-radius:16px;
+    background: transparent;
+    background-color: #18252b;
+    border: 8px solid #2da92e;   
+    /* esta tag permite definir o fundo do botao em si, o tamanho, forma, e raio das bordas, bem como o espacamento entre os elementos internos e as bordas */
+}
+
+.buttonAreaContainer button:active {
+    background-color: khaki;
+    border-color: cyan;
+}
+
+footer{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff80;
+    position: absolute;
+    bottom:20px;
+    left: 0;
+    right: 0;
+    /* permite colocar o textode rodape de forma flexivel, na forma de columa e com posicao absoluta. Conta com o comando que permite definir as distancias do texto em relacao aos cantos da pagina */
+}
+
