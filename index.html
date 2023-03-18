@@ -1,46 +1,100 @@
+<!-- ! - comando para autoexibit da estrutura do codigo -->
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-pt"> 
+  <!-- lang - lingua de escrita do codigo -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styes/index.css"> 
-    <title>IOT</title>
+    <link rel="stylesheet" href="/styles/index.css"/>
+    <title>IOT - Demo Version 1.0</title>  
+    <!-- comment - CTRL+/ -->
+    <!-- title - titulo da pagina que vai aparecer no browser -->
+    <!-- head - parte inicial do cabecalho da pagina -->
+    <!-- link - informa ao html sobre a relacao com a pagina de estilizacao. Ref-->
 </head>
+
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  // forma antiga de se conectar a internet, tendo em conta que o firebase usa novas funcoes do javascript
+  <script>          
+  const firebaseConfig = {
+    apiKey: "AIzaSyAXTCI-p2WFDIwknRNRFT9GQiaugND9_R8",
+    authDomain: "iot-demo-v1-f7637.firebaseapp.com",
+    projectId: "iot-demo-v1-f7637",
+    storageBucket: "iot-demo-v1-f7637.appspot.com",
+    messagingSenderId: "559710143098",
+    appId: "1:559710143098:web:a0d6fbfa1f42c96dda31c3",
+    measurementId: "G-4GQXBGYLX6"
+    };
+  
+    firebase.initializeApp(firebaseConfig);
 
-    <script>
-        const firebaseConfig = {
-          apiKey: "AIzaSyCj8hy3gSxx7N4ADXwWqmxJZBVrpj5zq7g",
-          authDomain: "iot-sample-v01.firebaseapp.com",
-          projectId: "iot-sample-v01",
-          storageBucket: "iot-sample-v01.appspot.com",
-          messagingSenderId: "545816079372",
-          appId: "1:545816079372:web:876485abed45d3e11e9229"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-      </script> 
+    function ledOn(){
+      firebase.database().ref("Quarto_1").set({
+        estado:"LIGADA"
+      })
+    }
 
-    <div class="bd">
+    function ledOff(){
+      firebase.database().ref("Quarto_1").set({
+        estado:"DESLIGADA"
+      })
+    }
 
-    <img src="./assets/Logo.png" alt="App logo"/>
-    </h1>" Bem vindo ao Smart Light</h1>
-    <p> You can turn on and off your House lamps with the press of a button
-    </p>
+  </script>
+  
+    <div class="pageBody"> 
+      <!-- selector de estilizacao da pagina - a ser usado no index do css -->
+      <img src="./assets/Logo.png" alt="Logo" style="width:100%" />
+      <!-- carrega a imagem do logotipo na pagina, e caso hajam problemas de renderizacao vai apresentar a mensagem Logo. Para evitar uso do comando img na pagina de estilizacao e fazer alteracoes nas imagens todas, usa-se o style para alterar a largura desta unica imagem localmente -->
 
-    <img src="./assets/icon.png" alt="icone"/>
-    <p> Quarto 1</p>
-    <p>Sistema basico de gestao de casa inteligente</p>
-    <p>Supported by TurboKode.lda</p>
+      <section class="titleContainer">
+        <!-- seccao para apresentacao do texto da pagina. A ser dividida em cabecalhos hierarquicos -->
+        <h2> Bem vindo ao SMART LIGHT</h2> 
+        <!-- tag h2 referencia um titulo -->
+        <p> Voce pode ligar ou desligar as lampadas da sua casa atraves dos botoes abaixo </p>
+        <!-- tag p faz referencia a um paragrafo -->
+        <!-- "<p2> lets hope this works </p2>"....para adicionar paragrafos novos -->
+        </section>
+        
+      <section class="buttonAreaContainer">
+        <!-- seccao concernente aos botoes do pagina -->
+        <button onclick="ledOn()">
+          <img src="./assets/icon.png" alt="light state"/>
+          <p>Quarto 1</p>
+        </button>
+
+        <button onClick="ledOff()">
+          <img src="./assets/icon.png" alt="light state"/>
+          <p>Quarto 2</p>
+        </button>
+
+        <button>
+          <img src="./assets/icon.png" alt="light state"/>
+          <p>Quarto 3</p>
+        </button>
+
+        <button>
+          <img src="./assets/icon.png" alt="light state"/>
+          <p>Quarto 4</p>
+
+          <!--  permite definir cada botao, a localizao da sua imagem e texto alternativo a mostrar caso a imagem nao renderize, bem como o texto a ser apresentado no mesmo-->
+        </button>
+
+      </section>
+
+      <footer>
+        <p>Sistema basico de gestao de uma casa inteligente</p>
+        <p>Supported by TurboKode.lda</p>
+        <!-- informacao de rodapeh a ser mostrada no final da pagina -->
+      </footer>
 
 
-    <button>Ligar</button>
-
-    <div>
-
-
-
+    </div>
 </body>
 </html>
+
