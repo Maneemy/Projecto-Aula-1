@@ -45,6 +45,21 @@
         estado:"DESLIGADA"
       })
     }
+// Funcoes do botao ON/OFF para o Quarto 1
+
+function ledOn2(){
+      firebase.database().ref("Quarto_2").set({
+        estado:"LIGADA"
+      })
+    }
+
+    function ledOff2(){
+      firebase.database().ref("Quarto_2").set({
+        estado:"DESLIGADA"
+      })
+    }
+// Funcoes do botao ON/OFF para o Quarto 2
+
     
     <!-- funcoes on e off do Firebase para mudar o estado da lampada em cada compartimento -->
    
@@ -80,13 +95,13 @@
           <p>Quarto 1</p>
         </button>
 
-        <button onClick="ledOn()">
+        <button onClick="ledOn2()">
           <img src="./assets/ledOn.png" alt="light state"/>
           <p class="p1"> LIGADA </p>
           <p>Quarto 2</p>
         </button>
 
-        <button onClick="ledOff()">
+        <button onClick="ledOff2()">
           <img src="./assets/ledOff.png" alt="light state"/>
           <p class="p1"> DESLIGADA </p>
           <p>Quarto 2</p>
